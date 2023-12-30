@@ -1,8 +1,8 @@
 {
-  "title": "创建组件",
-  "namespace": "mybricks.comlib-meta.createCom",
+  "title": "创建场景",
+  "namespace": "mybricks.comlib-meta.createScene",
   "version": "1.0.0",
-  "description": "创建组件",
+  "description": "创建场景",
   "author": "MyBricks",
   "author_name": "MyBricks",
   "icon": "./icon.svg",
@@ -15,12 +15,7 @@
       "id": "create",
       "title": "开始",
       "schema": {
-        "type": "object",
-        "properties": {
-          "sceneId": {
-            "type": "string"
-          }
-        }
+        "type": "any"
       },
       "rels": [
         "finish"

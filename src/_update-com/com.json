@@ -1,8 +1,8 @@
 {
-  "title": "创建组件",
-  "namespace": "mybricks.comlib-meta.createCom",
+  "title": "修改组件",
+  "namespace": "mybricks.comlib-meta.updateCom",
   "version": "1.0.0",
-  "description": "创建组件",
+  "description": "修改组件",
   "author": "MyBricks",
   "author_name": "MyBricks",
   "icon": "./icon.svg",

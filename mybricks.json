@@ -7,7 +7,9 @@
   "content": "",
   "commitInfo": "init",
   "comAry": [
-    "./src/_create-com/com.json"
+    "./src/_create-scene/com.json",
+    "./src/_create-com/com.json",
+    "./src/_update-com/com.json"
   ],
   "componentType": "PC",
   "externals": [
