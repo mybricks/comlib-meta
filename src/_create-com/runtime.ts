@@ -4,7 +4,7 @@ export default function ({ env, data, inputs, outputs }) {
     const { sceneId, store } = nextValue
 
     if (next) {
-      console.log("添加: ", data.comDef)
+      console.log("创建组件: ", data.comDef, nextValue)
 
       /**
        * slotInfo

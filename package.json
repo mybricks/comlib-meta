@@ -1,7 +1,7 @@
 {
   "name": "@mybricks/comlib-meta",
   "version": "0.0.1",
-  "description": "MyBricks模版组件库",
+  "description": "MyBricks模板组件库",
   "main": "index.js",
   "author": "MyBricks团队",
   "license": "ISC",
