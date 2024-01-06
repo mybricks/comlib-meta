@@ -1,33 +1,14 @@
 {
-  "fileId": 7182,
-  "prodFileId": 30402,
-  "folderId": 28720,
-  "folderIdStaging": 7183,
-  "namespace": "mybricks.basic-comlib",
+  "namespace": "mybricks.comlib-meta",
   "content": "",
   "commitInfo": "init",
   "comAry": [
     "./src/_create-scene/com.json",
     "./src/_create-com/com.json",
-    "./src/_update-com/com.json"
+    "./src/_update-com/com.json",
+    "./src/_generate-page/com.json"
   ],
   "componentType": "PC",
-  "externals": [
-    {
-      "name": "@ant-design/icons",
-      "library": "icons",
-      "urls": [
-        "https://assets.mybricks.world/pkg/@ant-design/icons-4.7.0/index.umd.min.js"
-      ]
-    },
-    {
-      "name": "antd",
-      "library": "antd",
-      "urls": [
-        "https://assets.mybricks.world/pkg/antd-4.21.6/antd.min.css",
-        "https://assets.mybricks.world/pkg/moment-2.9.1/moment.min.js",
-        "https://assets.mybricks.world/pkg/antd-4.21.6/antd.min.js"
-      ]
-    }
-  ]
+  "userName": "leon",
+  "tags": "react"
 }

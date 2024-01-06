@@ -1,22 +1,15 @@
 export default {
   ':root': [
     {
-      title: '选择组件定义',
-      type: 'comSelector',
-      options({data}) {
-        return [
-          {
-            label: '数字',
-            value: 'number'
-          }
-        ]
-      },
+      title: '选择组件',
+      type: 'sceneComSelector',
       value: {
-        get({data, inputs}, val) {
-          return data.valueType
+        get({ data }) {
+          return data.comDef
         },
-        set({data, inputs}, val) {
-          data.valueType = val
+        set({ data }, comDef) {
+          console.log("comDef: ", comDef)
+          data.comDef = comDef
         }
       }
     }

@@ -1,15 +1,12 @@
-export default function ({env, data, inputs, outputs, logger, onError}) {
-  inputs['create']((val) => {
-    const comDef = {
-      namespace: 'mybricks.normal-pc.custom-button',
-      data: {
-        text: '按钮',
-        useIcon: true
-      }
+export default function ({ env, data, inputs, outputs }) {
+  const next = !env.runtime.debug
+  inputs['create'](() => {
+    let nextValue
+    
+    if (next) {
+      console.log("创建场景: ", data.dump)
+      nextValue = env.canvas.appendScene(data.dump)
     }
-    
-    env.canvas.appendCom(comDef)
-    
-    outputs['finish'](true)
+    outputs['finish'](data.scene.id)
   })
 }

@@ -14,16 +14,17 @@
     {
       "id": "create",
       "title": "开始",
-      "schema": {
-        "type": "object",
-        "properties": {
-          "sceneId": {
-            "type": "string"
-          }
+      "schema": [
+        {
+          "name": "sceneId",
+          "title": "场景ID",
+          "type": "any"
+        },
+        {
+          "name": "store",
+          "title": "状态/行为",
+          "type": "any"
         }
-      },
-      "rels": [
-        "finish"
       ]
     }
   ],
@@ -32,12 +33,7 @@
       "id": "finish",
       "title": "完成",
       "schema": {
-        "type": "object",
-        "properties": {
-          "sceneId": {
-            "type": "string"
-          }
-        }
+        "type": "any"
       }
     }
   ]

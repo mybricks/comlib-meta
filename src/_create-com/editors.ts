@@ -1,22 +1,23 @@
 export default {
   ':root': [
     {
-      title: '选择组件定义',
+      title: '选择组件',
       type: 'comSelector',
-      options({data}) {
-        return [
-          {
-            label: '数字',
-            value: 'number'
-          }
-        ]
+      options: {
+        rtType: 'ui'
       },
       value: {
-        get({data, inputs}, val) {
-          return data.valueType
+        get({ data }) {
+          return data.comDef
         },
-        set({data, inputs}, val) {
-          data.valueType = val
+        set({ data }, comDef) {
+          if (comDef) {
+            data.comDef = {
+              namespace: comDef.namespace
+            }
+          } else {
+            data.comDef = null
+          }
         }
       }
     }

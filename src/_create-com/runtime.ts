@@ -1,15 +1,31 @@
-export default function ({env, data, inputs, outputs, logger, onError}) {
-  inputs['create']((val) => {
-    const comDef = {
-      namespace: 'mybricks.normal-pc.custom-button',
-      data: {
-        text: '按钮',
-        useIcon: true
-      }
+export default function ({ env, data, inputs, outputs }) {
+  const next = !env.runtime.debug
+  inputs['create']((nextValue) => {
+    const { sceneId, store } = nextValue
+
+    if (next) {
+      console.log("添加: ", data.comDef)
+
+      /**
+       * slotInfo
+       *  - sceneId 场景id
+       *  - comId 组件id
+       *  - slotId 插槽id
+       *  默认使用传入的sceneId，没有comId和slotId则添加至场景，若有，例：向表单容器的content插槽添加组件
+       */
+      const { slotInfo, data: comData } = store
+
+      env.canvas.appendCom({
+        sceneId,
+        ...slotInfo,
+      }, {
+        // 包含组件信息（namespace，表达添加的组件
+        ...data.comDef,
+        // 组件数据源，引擎内Object.assgin来合并
+        data: { ...comData }
+      })
     }
     
-    env.canvas.appendCom(comDef)
-    
-    outputs['finish'](true)
+    outputs['finish'](sceneId)
   })
 }

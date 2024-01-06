@@ -1,25 +1,27 @@
 export default {
-  '@toJSON'({env,data}){
-  
+  '@toJSON'({ data, scenes }){
+    const { scene } = data
+    console.log("@toJSON: ", data)
+    return {
+      data: {
+        scene,
+        dump: scene.empty ? {
+          id: scene.id,
+          title: scene.title
+        } : JSON.stringify(scenes.dump(scene.id))
+      }
+    }
   },
   ':root': [
     {
-      title: '选择组件定义',
-      type: 'comSelector',
-      options({data}) {
-        return [
-          {
-            label: '数字',
-            value: 'number'
-          }
-        ]
-      },
+      title: '选择场景',
+      type: 'sceneSelector',
       value: {
-        get({data, inputs}, val) {
-          return data.valueType
+        get({ data }) {
+          return data.scene
         },
-        set({data, inputs}, val) {
-          data.valueType = val
+        set({ data }, scene) {
+          data.scene = scene
         }
       }
     }
