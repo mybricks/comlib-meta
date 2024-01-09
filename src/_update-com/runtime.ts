@@ -21,7 +21,6 @@ export default function ({ env, data, inputs, outputs }) {
       const { data: comData, delete: delStore, append } = store
 
       const com = env.canvas.getCom({sceneId, comId: data.comDef.id})
-      com.data = merge(com.data, comData)
 
       const { slots } = com
       if (slots) {
@@ -52,6 +51,8 @@ export default function ({ env, data, inputs, outputs }) {
           slot && slot.appendChild({ namespace, data })
         })
       }
+
+      com.data = merge(com.data, comData)
     }
     
     outputs['finish'](sceneId)
