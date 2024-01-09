@@ -1,3 +1,5 @@
+import { merge } from 'lodash'
+
 export default function ({ env, data, inputs, outputs }) {
   const next = !env.runtime.debug
   inputs['create']((nextValue) => {
@@ -19,7 +21,7 @@ export default function ({ env, data, inputs, outputs }) {
       const { data: comData, delete: delStore, append } = store
 
       const com = env.canvas.getCom({sceneId, comId: data.comDef.id})
-      com.data = Object.assign(com.data, comData)
+      com.data = merge(com.data, comData)
 
       const { slots } = com
       if (slots) {
