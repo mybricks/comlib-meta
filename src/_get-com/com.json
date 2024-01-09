@@ -1,0 +1,38 @@
+{
+  "title": "读取组件信息",
+  "namespace": "mybricks.comlib-meta.getCom",
+  "version": "1.0.0",
+  "description": "读取组件信息",
+  "author": "MyBricks",
+  "author_name": "MyBricks",
+  "icon": "./icon.svg",
+  "data": "./data.json",
+  "runtime": "./runtime.ts",
+  "editors": "./editors.ts",
+  "rtType": "js",
+  "inputs": [
+    {
+      "id": "get",
+      "title": "读取",
+      "schema": [
+        {
+          "name": "sceneId",
+          "title": "场景ID",
+          "type": "any"
+        }
+      ],
+      "rels": [
+        "finish"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "id": "finish",
+      "title": "完成",
+      "schema": {
+        "type": "any"
+      }
+    }
+  ]
+}
