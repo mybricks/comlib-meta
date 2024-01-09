@@ -18,12 +18,81 @@
         {
           "name": "sceneId",
           "title": "场景ID",
-          "type": "any"
+          "type": "string",
+          "description": "修改该场景（ID）下组件"
         },
         {
           "name": "store",
           "title": "状态/行为",
-          "type": "any"
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "object",
+              "description": "组件数据源"
+            },
+            "delete": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "slotId": {
+                    "type": "string",
+                    "description": "插槽ID"
+                  },
+                  "comId": {
+                    "type": "string",
+                    "description": "组件ID"
+                  }
+                }
+              },
+              "description": "删除组件"
+            },
+            "append": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "slotId": {
+                    "type": "string",
+                    "description": "插槽ID"
+                  },
+                  "namesapce": {
+                    "type": "string",
+                    "description": "组件namesapce"
+                  },
+                  "data": {
+                    "type": "object",
+                    "description": "组件数据源"
+                  }
+                }
+              },
+              "description": "添加组件"
+            }
+          }
+        },
+        {
+          "name": "store",
+          "title": "状态/行为",
+          "type": "object",
+          "properties": {
+            "slotInfo": {
+              "type": "object",
+              "description": "向场景（sceneId）的组件（comId）的插槽（slotId）添加组件，不提供组件和插槽的id则直接向画布中添加",
+              "properties": {
+                "comId": {
+                  "type": "string",
+                  "description": "组件ID"
+                },
+                "slotId": {
+                  "type": "string",
+                  "description": "插槽ID"
+                }
+              }
+            },
+            "data": {
+              "type": "object"
+            }
+          }
         }
       ]
     }
@@ -33,7 +102,8 @@
       "id": "finish",
       "title": "完成",
       "schema": {
-        "type": "any"
+        "type": "string",
+        "description": "场景ID"
       }
     }
   ]

@@ -1,4 +1,8 @@
 export default {
+  '@init'({ setDesc }) {
+    setDesc('空白场景')
+
+  },
   '@toJSON'({ data, scenes }){
     const { scene } = data
     console.log("@toJSON: ", data)
@@ -20,8 +24,9 @@ export default {
         get({ data }) {
           return data.scene
         },
-        set({ data }, scene) {
+        set({ data, setDesc }, scene) {
           data.scene = scene
+          setDesc(scene.empty ? '空白场景' : `基于“${scene.title}”`)
         }
       }
     }

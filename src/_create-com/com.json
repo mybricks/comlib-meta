@@ -18,12 +18,33 @@
         {
           "name": "sceneId",
           "title": "场景ID",
-          "type": "any"
+          "type": "string",
+          "description": "组件在该场景（ID）下创建"
         },
         {
           "name": "store",
           "title": "状态/行为",
-          "type": "any"
+          "type": "object",
+          "properties": {
+            "slotInfo": {
+              "type": "object",
+              "description": "向场景（sceneId）的组件（comId）的插槽（slotId）添加组件，不提供组件和插槽的id则直接向画布中添加",
+              "properties": {
+                "comId": {
+                  "type": "string",
+                  "description": "组件ID"
+                },
+                "slotId": {
+                  "type": "string",
+                  "description": "插槽ID"
+                }
+              }
+            },
+            "data": {
+              "type": "object",
+              "description": "组件数据源"
+            }
+          }
         }
       ]
     }
@@ -33,7 +54,8 @@
       "id": "finish",
       "title": "完成",
       "schema": {
-        "type": "any"
+        "type": "string",
+        "description": "场景ID"
       }
     }
   ]

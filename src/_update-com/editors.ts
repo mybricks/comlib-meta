@@ -1,4 +1,7 @@
 export default {
+  '@init'({ setDesc }) {
+    setDesc("未选择组件")
+  },
   ':root': [
     {
       title: '选择组件',
@@ -7,8 +10,9 @@ export default {
         get({ data }) {
           return data.comDef
         },
-        set({ data }, comDef) {
+        set({ data, setDesc }, comDef) {
           data.comDef = comDef
+          setDesc(comDef.title)
         }
       }
     }

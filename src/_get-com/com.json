@@ -18,7 +18,7 @@
         {
           "name": "sceneId",
           "title": "场景ID",
-          "type": "any"
+          "type": "string"
         }
       ],
       "rels": [
@@ -31,7 +31,24 @@
       "id": "finish",
       "title": "完成",
       "schema": {
-        "type": "any"
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "组件数据源"
+          },
+          "id": {
+            "type": "string",
+            "description": "组件ID"
+          },
+          "title": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "description": "组件信息"
       }
     }
   ]

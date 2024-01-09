@@ -24,7 +24,8 @@
       "id": "finish",
       "title": "完成",
       "schema": {
-        "type": "any"
+        "type": "string",
+        "description": "场景ID"
       }
     }
   ]

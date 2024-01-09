@@ -8,7 +8,6 @@ export default function ({ env, data, inputs, outputs }) {
 
       /**
        * slotInfo
-       *  - sceneId 场景id
        *  - comId 组件id
        *  - slotId 插槽id
        *  默认使用传入的sceneId，没有comId和slotId则添加至场景，若有，例：向表单容器的content插槽添加组件
