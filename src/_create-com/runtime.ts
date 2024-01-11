@@ -23,8 +23,8 @@ export default function ({ env, data, inputs, outputs }) {
         // 组件数据源，引擎内Object.assgin来合并
         data: { ...comData }
       })
+
+      outputs['finish'](sceneId)
     }
-    
-    outputs['finish'](sceneId)
   })
 }

@@ -6,7 +6,7 @@ export default function ({ env, data, inputs, outputs }) {
     if (next) {
       console.log("创建场景: ", data.dump)
       nextValue = env.canvas.appendScene(data.dump)
+      outputs['finish'](nextValue?.id)
     }
-    outputs['finish'](nextValue?.id)
   })
 }

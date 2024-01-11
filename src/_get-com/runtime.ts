@@ -6,8 +6,7 @@ export default function ({ env, data, inputs, outputs }) {
 
     if (next) { 
       com = env.canvas.getCom({sceneId, comId: data.comDef.id})
+      outputs['finish'](com)
     }
-    
-    outputs['finish'](com)
   })
 }

@@ -53,8 +53,7 @@ export default function ({ env, data, inputs, outputs }) {
       }
 
       com.data = merge(com.data, comData)
+      outputs['finish'](sceneId)
     }
-    
-    outputs['finish'](sceneId)
   })
 }
