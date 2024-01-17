@@ -6,6 +6,7 @@
     "./src/_create-scene/com.json",
     "./src/_create-com/com.json",
     "./src/_update-com/com.json",
+    "./src/_delete-com/com.json",
     "./src/_generate-page/com.json",
     "./src/_get-com/com.json"
   ],
